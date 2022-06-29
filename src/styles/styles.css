@@ -1,0 +1,142 @@
+.menu-bar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: 14px;
+  border-top: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+  column-gap: 20px;
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+
+.menu-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-bar .block-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu-bar .block-wrapper button {
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  border: 1px solid #dee2e6;
+  cursor: pointer;
+}
+.menu-bar .block-wrapper button:hover {
+  background-color: #f8f9fa;
+}
+.menu-bar .block-wrapper button:active svg {
+  transition: 100ms ease-in-out;
+  transform: translateY(1px);
+}
+.menu-bar .block-wrapper button[disabled] {
+  cursor: auto;
+}
+.menu-bar .block-wrapper button[disabled] svg {
+  opacity: 0.4;
+}
+.menu-bar .block-wrapper button[disabled]:hover {
+  background-color: transparent;
+}
+.menu-bar .block-wrapper button:first-of-type {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.menu-bar .block-wrapper button:last-of-type {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.menu-bar .block-wrapper button + button {
+  border-left-width: 0;
+}
+.menu-bar .block-wrapper button.is-active {
+  background-color: #ebf7ff;
+  color: #0496ff;
+}
+.ProseMirror {
+  padding: 1rem;
+}
+.ProseMirror p.is-editor-empty:first-child::before {
+  color: #adb5bd;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+.ProseMirror .list {
+  padding-left: 20px;
+}
+.ProseMirror .list p {
+  margin: 5px 0;
+}
+.ProseMirror ul[data-type="taskList"] {
+  list-style: none;
+  padding: 0;
+}
+.ProseMirror ul[data-type="taskList"] li {
+  display: flex;
+  margin: 5px 0;
+}
+.ProseMirror ul[data-type="taskList"] li > label {
+  flex: 0 0 auto;
+  margin-right: 0.5rem;
+  user-select: none;
+}
+.ProseMirror ul[data-type="taskList"] li > div {
+  flex: 1 1 auto;
+}
+.ProseMirror ul[data-type="taskList"] li > div p {
+  margin: 0;
+}
+.linkmenu-wrapper {
+  display: flex;
+  align-items: center;
+}
+.linkmenu-wrapper input {
+  padding: 0 10px;
+  width: 150px;
+  height: 32px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border: 1px solid #dee2e6;
+  border-right: 0;
+  background-color: white;
+}
+.linkmenu-wrapper input:focus {
+  outline: none;
+}
+.linkmenu-wrapper button:first-of-type {
+  border-left: 0;
+  border-radius: 0 !important;
+}
+.main-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.main-wrapper .dropmenu-wrapper {
+  position: absolute;
+  top: 65px;
+  width: fit-content;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+  will-change: transform, opacity;
+  transform: translateY(-10px);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  border-radius: 10px;
+  padding: 1rem;
+}
+.main-wrapper .dropmenu-showed {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
